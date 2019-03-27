@@ -176,7 +176,7 @@ router.post("/publish", isAuthenticated, uploadPictures, function(
         created: offer.created,
         creator: {
           account: offer.creator.account,
-          _id: offer._id
+          _id: offer.creator._id
         }
       });
     } else {
