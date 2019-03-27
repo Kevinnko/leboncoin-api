@@ -156,7 +156,6 @@ router.post("/publish", isAuthenticated, uploadPictures, function(
   res,
   next
 ) {
-  console.log("req.user : ", req.user);
   const obj = {
     title: req.body.title,
     description: req.body.description,
@@ -176,7 +175,7 @@ router.post("/publish", isAuthenticated, uploadPictures, function(
         created: offer.created,
         creator: {
           account: offer.creator.account,
-          _id: offer._id
+          _id: offer.creator._id
         }
       });
     } else {
